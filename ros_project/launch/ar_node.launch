@@ -1,0 +1,12 @@
+<launch>
+  
+  <include file="$(find ardrone_sim)/launch/ardrone_sim.launch"/>
+  <include file="$(find ros_project)/launch/ar_pose_multi.launch"/>
+
+  <node name="ar1" pkg ="ros_project" type="ros_project" output ="screen" >
+    <remap from="/ar_pose/Markers" to="/ar_pose_marker"/>
+  </node>
+
+ <!-- <node name= "ardrone_driver" pkg="ardrone_autonomy" type="ardrone_driver" output="screen"/>-->
+
+</launch>
